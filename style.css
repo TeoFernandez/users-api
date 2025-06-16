@@ -64,3 +64,57 @@ button {
     cursor: pointer;
     border-radius: 5px;
 }
+.lista{
+    list-style: none; /* Quita los puntos de la lista */
+    padding: 20px; /* Añadido padding para que no esté pegada a los bordes */
+    margin: 0 auto; /* Centra la lista horizontalmente */
+    max-width: 1200px; /* Opcional: Define un ancho máximo para la lista completa */
+
+    /* Estilos para Flexbox: Muestra los elementos en una fila */
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea si no hay espacio */
+    justify-content: center; /* Centra los elementos horizontalmente cuando hay espacio */
+    gap: 15px; /* Espacio entre los elementos */
+}
+
+.lista li {
+    /* Estilos para los elementos de la lista */
+    padding: 15px 25px; /* Un poco más de padding para que se vean mejor */
+    border: 1px solid #437a16; /* Color de borde de tu paleta verde */
+    background-color: #2a2a2a; /* Un color de fondo más oscuro para los ítems */
+    color: #f0f0f0; /* Color de texto claro */
+    text-align: center;
+    border-radius: 8px; /* Bordes ligeramente redondeados */
+    flex: 1 1 auto; /* Permite que los elementos crezcan y se encojan */
+    min-width: 200px; /* Ancho mínimo para cada elemento antes de que se apilen */
+    max-width: 280px; /* Ancho máximo para evitar que se estiren demasiado */
+    box-sizing: border-box; /* Asegura que padding y border se incluyan en el ancho */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sutil sombra para dar profundidad */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Transición para efectos hover */
+}
+
+.lista li:hover {
+    transform: translateY(-3px); /* Pequeño levantamiento al pasar el mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada al pasar el mouse */
+}
+
+/* Media Query para pantallas pequeñas (móviles) */
+@media (max-width: 768px) { /* Este breakpoint es común para tablets/móviles */
+    .lista {
+        flex-direction: column; /* Cambia la dirección a columna, apilando los elementos */
+        align-items: center; /* Centra los elementos apilados horizontalmente */
+        padding: 10px; /* Menos padding en móviles */
+    }
+
+    .lista li {
+        width: 90%; /* Los elementos ocupan un gran porcentaje del ancho disponible en móvil */
+        max-width: none; /* Quita el ancho máximo en móvil para que se ajuste */
+        min-width: unset; /* Quita el min-width para que se ajuste mejor */
+        margin-bottom: 15px; /* Espacio entre elementos apilados en móvil */
+    }
+
+    /* Eliminar margen inferior del último elemento apilado para evitar espacio extra */
+    .lista li:last-child {
+        margin-bottom: 0;
+    }
+}
