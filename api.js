@@ -13,7 +13,8 @@ document.getElementById('load-users').addEventListener('click', async () => {
         li.innerHTML = `
             <strong>Nombre:</strong> ${user.name} <br>
             <strong>Email:</strong> ${user.email} <br>
-            <strong>Ciudad:</strong> ${user.address.city}
+            <strong>Ciudad:</strong> ${user.address.city}<br>
+            <strong>Teléfono:</strong> ${user.phone}
             <br><br>
         `;
         ul.prepend(li);
